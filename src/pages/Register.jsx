@@ -1,10 +1,11 @@
 import React from 'react';
 import useAuth from '../hook/useAuth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Register = () => {
     const {createUser} = useAuth();
+    const navigate = useNavigate();
 
     const handleRegister = (e)=>{
         e.preventDefault();
@@ -13,8 +14,6 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        // if(!regex.test(password)){
        
         const regexUpper = /^(?=.*[A-Z]).+$/;
         const regexLower = /^(?=.*[a-z]).+$/;
@@ -57,6 +56,7 @@ const Register = () => {
                 icon: 'success',
                 confirmButtonText: 'OK'
               })
+            navigate('/');
         })
         .catch(error =>{
             console.log(error.message);

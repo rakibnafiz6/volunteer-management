@@ -1,10 +1,14 @@
 import React from 'react';
 import useAuth from '../hook/useAuth';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {signInUser, signInGoogle} = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login',location);
+    const from = location.state || '/';
 
     const handleSignIn = (e)=>{
         e.preventDefault();
@@ -21,6 +25,7 @@ const Login = () => {
                 icon: 'success',
                 confirmButtonText: 'OK'
               })
+            navigate(from);
         })
         .catch(error =>{
             Swal.fire({
@@ -36,6 +41,7 @@ const Login = () => {
         signInGoogle()
         .then(result =>{
             console.log(result.user);
+            navigate(from);
         })
         .catch(error =>{
             console.log(error.message);

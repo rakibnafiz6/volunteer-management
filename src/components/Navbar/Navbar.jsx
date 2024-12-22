@@ -8,13 +8,13 @@ const Navbar = () => {
 
     const links = <>
         <NavLink to='/' className='mr-2 btn btn-sm'><li>Home</li></NavLink>
-        <NavLink className='mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
+        <NavLink to='/allVolunteer' className='mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
         
             <details className="dropdown">
                 <summary className=" btn btn-sm">My Profile</summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <NavLink className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
-                    <NavLink className='btn btn-sm'><li>Manage My Posts</li></NavLink>
+                    <NavLink to='/addVolunteer' className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
+                    <NavLink to='/myVolunteer' className='btn btn-sm'><li>Manage My Posts</li></NavLink>
                 </ul>
             </details>
     </>

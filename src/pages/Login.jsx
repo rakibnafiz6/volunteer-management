@@ -1,9 +1,10 @@
 import React from 'react';
 import useAuth from '../hook/useAuth';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const {signInUser} = useAuth();
+    const {signInUser, signInGoogle} = useAuth();
 
     const handleSignIn = (e)=>{
         e.preventDefault();
@@ -28,6 +29,16 @@ const Login = () => {
                 icon: 'error',
                 confirmButtonText: 'OK'
               })
+        })
+    }
+
+    const handleGoogle =()=>{
+        signInGoogle()
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.log(error.message);
         })
     }
 
@@ -59,6 +70,9 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    <div className="divider">OR</div>
+                    <button onClick={handleGoogle} className='btn btn-primary mb-2 mx-5'>Login with Google</button>
+                    <p className='text-center pb-3'>You have a new user please! <Link to='/register' className='text-red-500'>Register</Link></p>
                 </div>
             </div>
         </div>

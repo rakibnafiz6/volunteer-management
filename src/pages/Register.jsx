@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Register = () => {
-    const {createUser} = useAuth();
+    const {createUser, updateUserProfile} = useAuth();
     const navigate = useNavigate();
 
     const handleRegister = (e)=>{
@@ -57,6 +57,21 @@ const Register = () => {
                 confirmButtonText: 'OK'
               })
             navigate('/');
+               
+            const profile = {
+                displayName: name,
+                photoURL: photo
+            }
+
+            updateUserProfile(profile)
+            .then(()=>{
+                console.log('update profile successfully');
+            })
+            .catch(error =>{
+                console.log(error.message);
+            })
+
+
         })
         .catch(error =>{
             console.log(error.message);

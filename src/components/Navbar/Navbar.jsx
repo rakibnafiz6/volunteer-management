@@ -3,29 +3,29 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 
 const Navbar = () => {
- const {signOutUser} = useAuth();
- const navigate = useNavigate();
+    const { signOutUser, user } = useAuth();
+    const navigate = useNavigate();
 
     const links = <>
         <NavLink to='/' className='mr-2 btn btn-sm'><li>Home</li></NavLink>
         <NavLink to='/allVolunteer' className='mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
-        
-            <details className="dropdown">
-                <summary className=" btn btn-sm">My Profile</summary>
-                <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <NavLink to='/addVolunteer' className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
-                    <NavLink to='/myVolunteer' className='btn btn-sm'><li>Manage My Posts</li></NavLink>
-                </ul>
-            </details>
+
+        <details className="dropdown">
+            <summary className=" btn btn-sm">My Profile</summary>
+            <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                <NavLink to='/addVolunteer' className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
+                <NavLink to='/myVolunteer' className='btn btn-sm'><li>Manage My Posts</li></NavLink>
+            </ul>
+        </details>
     </>
 
-    const handleLogOut = ()=>{
+    const handleLogOut = () => {
         signOutUser()
-        .then(()=>{
-            console.log('user logout successfully');
-            navigate('/login');
-        })
-        .catch(error =>console.log(error.message))
+            .then(() => {
+                console.log('user logout successfully');
+                navigate('/login');
+            })
+            .catch(error => console.log(error.message))
     }
 
     return (
@@ -60,9 +60,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">Login</Link>
-                <button onClick={handleLogOut} className='btn'>Logout</button>
+                {user ? <> <div className='tooltip flex' data-tip={user?.displayName}>
+                    <img className='tooltip w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
+                    </div> <button onClick={handleLogOut} className='btn'>Logout</button></>: 
+                    <Link to='/login' className="btn">Login</Link>}
+
+
             </div>
+            {/* <div className="tooltip" data-tip="hello">
+                <button className="btn">Hover me</button>
+            </div> */}
         </div>
     );
 };

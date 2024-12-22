@@ -1,5 +1,7 @@
 import React from 'react';
 import useAuth from '../hook/useAuth';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const {createUser} = useAuth();
@@ -11,18 +13,64 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        // const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        // if(!regex.test(password)){
        
+        const regexUpper = /^(?=.*[A-Z]).+$/;
+        const regexLower = /^(?=.*[a-z]).+$/;
+        const regexpass = /^.{6,}$/;
+    
+        if(!regexUpper.test(password)){
+            Swal.fire({
+                title: 'Error!',
+                text: "Password must have an uppercase",
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+            return;
+        }
+        if(!regexLower.test(password)){
+            Swal.fire({
+                title: 'Error!',
+                text: "Password must have an lowercase",
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+            return;
+        }
+        if(!regexpass.test(password)){
+            Swal.fire({
+                title: 'Error!',
+                text: "password Length must be at least 6 character",
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+            return;
+        }
+
         createUser(email, password)
         .then(result =>{
             console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: "Successfully create user",
+                icon: 'success',
+                confirmButtonText: 'OK'
+              })
         })
         .catch(error =>{
             console.log(error.message);
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
         })
-        
-
 
     }
+
+   
 
 
     return (
@@ -65,6 +113,7 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                <p className='text-center pb-3'>Already Have an account please! <Link to='/login' className='text-red-500'>Login</Link></p>
                 </div>
             </div>
         </div>

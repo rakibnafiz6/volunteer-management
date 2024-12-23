@@ -11,6 +11,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import ManageMyVolunteer from "../pages/ManageMyVolunteer";
 import AllVolunteer from "../pages/AllVolunteer";
 import VolunteerDetails from "../pages/VolunteerDetails";
+import Update from "../pages/Update";
 
     const router = createBrowserRouter([
     {
@@ -43,6 +44,13 @@ import VolunteerDetails from "../pages/VolunteerDetails";
           element: <PrivateRoutes>
             <VolunteerDetails></VolunteerDetails>
           </PrivateRoutes>
+        },
+        {
+          path: '/update/:id',
+          element: <PrivateRoutes>
+            <Update></Update>
+          </PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:5000/update-volunteer/${params.id}`)
         },
         {
             path: '/login',

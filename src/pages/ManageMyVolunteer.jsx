@@ -18,8 +18,7 @@ const ManageMyVolunteer = () => {
 
     return (
         <div>
-            <h2>my volunteer page</h2>
-        {myPost.length === 0 ? <p>You haven't added any volunteer need posts yet. Start by creating a new post!</p> : 
+        {myPost.length === 0 ? <p className='text-center text-2xl font-semibold'>You haven't added any volunteer need posts yet. Start by creating a new post!</p> : 
                 <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -40,7 +39,7 @@ const ManageMyVolunteer = () => {
                                 <td>{post.location}</td>
                                 <td>{post.category}</td>
                                 <td>
-                                    <Link><button className='btn mr-2'>Update</button></Link>
+                                    <Link to={`/update/${post._id}`}><button className='btn mr-2'>Update</button></Link>
                                     <button className='btn'>Delete</button>
                                 </td>
                             </tr>)

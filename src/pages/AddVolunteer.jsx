@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const AddVolunteer = () => {
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
-    
+    console.log(startDate);
 
     const handleAddVolunteer = (e)=>{
         e.preventDefault();

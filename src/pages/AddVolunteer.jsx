@@ -117,14 +117,14 @@ const AddVolunteer = () => {
                     <label className="label">
                         <span className="label-text">User Email</span>
                     </label>
-                    <input disabled type="email" defaultValue={user?.email} name='email' placeholder="user-email" className="input input-bordered w-[450px]" required />
+                    <input readOnly type="email" defaultValue={user?.email} name='email' placeholder="user-email" className="input input-bordered w-[450px]" required />
                 </div>
                 {/* User Name */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">User Name</span>
                     </label>
-                    <input disabled type="text" defaultValue={user?.displayName} name='name' placeholder="user-name" className="input input-bordered w-[450px]" required />
+                    <input readOnly type="text" defaultValue={user?.displayName} name='name' placeholder="user-name" className="input input-bordered w-[450px]" required />
                 </div>
 
                 {/* add post btn */}

@@ -29,7 +29,9 @@ const VolunteerNeed = () => {
                         <h2 className="card-title text-[#091854]">{volunteer.title}</h2>
                         <p className='text-gray-400'>{volunteer.category}</p>
                         <div className="card-actions pb-5">
-                            <button class="btn btn-outline text-[#274dcf] rounded-full hover:bg-[#274dcf] mt-4">View Details</button>
+                           <Link to={`/volunteerDetails/${volunteer._id}`}>
+                           <button class="btn btn-outline text-[#274dcf] rounded-full hover:bg-[#274dcf] mt-4">View Details</button>
+                           </Link>
                         </div>
                     </div>
                 </div>)

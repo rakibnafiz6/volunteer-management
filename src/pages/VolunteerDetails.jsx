@@ -17,7 +17,7 @@ const VolunteerDetails = () => {
             .then(res => {
                 setVolunteers(res.data);
             })
-    }, [])
+    }, [id])
 
     return (
         <div className='flex mt-20'>

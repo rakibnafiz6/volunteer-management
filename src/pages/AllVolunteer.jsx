@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 const AllVolunteer = () => {
     const [volunteers, setVolunteers] = useState([]);
     const [search, setSearch] = useState('');
-console.log(search);
+
     useEffect(() => {
+        // axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
         axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
             .then(res => {
                 setVolunteers(res.data);

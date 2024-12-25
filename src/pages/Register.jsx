@@ -49,7 +49,7 @@ const Register = () => {
 
         createUser(email, password)
         .then(result =>{
-            console.log(result.user);
+            // console.log(result.user);
             Swal.fire({
                 title: 'Success!',
                 text: "Successfully create user",
@@ -65,16 +65,28 @@ const Register = () => {
 
             updateUserProfile(profile)
             .then(()=>{
-                console.log('update profile successfully');
+            
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'update profile successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  })
             })
             .catch(error =>{
-                console.log(error.message);
+                // console.log(error.message);
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                  })
             })
 
 
         })
         .catch(error =>{
-            console.log(error.message);
+            // console.log(error.message);
             Swal.fire({
                 title: 'Error!',
                 text: error.message,

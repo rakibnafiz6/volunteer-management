@@ -7,7 +7,7 @@ const Login = () => {
     const {signInUser, signInGoogle} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login',location);
+    // console.log('login',location);
     const from = location.state || '/';
 
     const handleSignIn = (e)=>{
@@ -18,7 +18,7 @@ const Login = () => {
 
         signInUser(email, password)
         .then(result =>{
-            console.log(result.user);
+    
             Swal.fire({
                 title: 'Success!',
                 text: 'User Login Successfully',
@@ -40,11 +40,16 @@ const Login = () => {
     const handleGoogle =()=>{
         signInGoogle()
         .then(result =>{
-            console.log(result.user);
+            // console.log(result.user);
             navigate(from);
         })
         .catch(error =>{
-            console.log(error.message);
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
         })
     }
 

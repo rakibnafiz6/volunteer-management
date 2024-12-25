@@ -8,8 +8,8 @@ const Footer = () => {
                     <h2 className='text-4xl font-bold bg-gray-300 ml-5 pt-16 p-8'>Volunteer <br /> Management</h2>
                     <form className="flex gap-6 bg-blue-400 pr-16">
                         <div className='flex flex-col p-8 mt-6'>
-                        <label className='text-white mb-2' for="email">Enter your email address:</label>
-                        <input type="email" id="email" placeholder="Your email"
+                        <label className='text-white mb-2'>Enter your email address:</label>
+                        <input type="email" placeholder="Your email"
                         className='input input-bordered'
                           />
                         </div>

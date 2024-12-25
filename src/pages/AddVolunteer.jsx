@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import useAuth from '../hook/useAuth';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
@@ -13,7 +13,7 @@ const AddVolunteer = () => {
     const axios = useAxiosSecure();
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
-    console.log(startDate);
+    // console.log(startDate);
 
     const handleAddVolunteer = (e)=>{
         e.preventDefault();
@@ -36,7 +36,7 @@ const AddVolunteer = () => {
     
         axios.post(`/volunteers`, volunteerData)   
         .then(res =>{
-            console.log(res.data);
+            
             if(res.data.insertedId){
                 Swal.fire({
                     title: 'Success!',

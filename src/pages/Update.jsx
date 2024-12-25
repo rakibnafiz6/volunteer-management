@@ -30,7 +30,7 @@ const Update = () => {
 
             axios.put(`/updatePost/${_id}`, updateData)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.modifiedCount) {
                     Swal.fire({
                         title: 'Success!',

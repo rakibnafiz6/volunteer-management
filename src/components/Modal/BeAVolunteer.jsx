@@ -5,13 +5,12 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const BeAVolunteer = ({ id }) => {
-    console.log(id);
     const { user } = useAuth();
     const [startDate, setStartDate] = useState(new Date());
     const [volunteerData, setVolunteerData] = useState({});
     const { _id, thumbnail, title, description, category, location, deadline,
         volunteer, organizer_email, organizer_name } = volunteerData;
- console.log(_id);
+//  console.log(_id);
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/volunteer/${id}`)
             .then(res => {
@@ -42,10 +41,10 @@ const BeAVolunteer = ({ id }) => {
             organizer_name, organizer_email, volunteerEmail,
             volunteerName, suggestion, status, id
         }
-        console.log(volunteerData);
+        // console.log(volunteerData);
         axios.post(`${import.meta.env.VITE_API_URL}/request`, volunteerData)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 document.getElementById('my_modal_5').close();
                 if (res.data.insertedId) {
                     Swal.fire({

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 import Theme from '../Theme/Theme';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { signOutUser, user } = useAuth();
@@ -23,10 +24,17 @@ const Navbar = () => {
     const handleLogOut = () => {
         signOutUser()
             .then(() => {
-                console.log('user logout successfully');
+                // console.log('user logout successfully');
                 navigate('/login');
             })
-            .catch(error => console.log(error.message))
+            .catch(error =>{
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                  })
+            })
     }
 
     return (
@@ -68,9 +76,7 @@ const Navbar = () => {
                     <Theme></Theme>
 
             </div>
-            {/* <div className="tooltip" data-tip="hello">
-                <button className="btn">Hover me</button>
-            </div> */}
+           
         </div>
     );
 };

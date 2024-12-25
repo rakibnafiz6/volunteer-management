@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
+import Theme from '../Theme/Theme';
 
 const Navbar = () => {
     const { signOutUser, user } = useAuth();
@@ -64,7 +65,7 @@ const Navbar = () => {
                     <img className='tooltip w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
                     </div> <button onClick={handleLogOut} className='btn'>Logout</button></>: 
                     <Link to='/login' className="btn">Login</Link>}
-
+                    <Theme></Theme>
 
             </div>
             {/* <div className="tooltip" data-tip="hello">

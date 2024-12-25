@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --body-background: white
+    --title: black;
+}
+
+
+[data-theme='light'] {
+    --body-background: white;
+    --title: black;
+}
+
+
+[data-theme='dark'] {
+    --body-background: rgb(52, 52, 52);;
+    --title: white;
+}

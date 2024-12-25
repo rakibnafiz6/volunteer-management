@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../hook/useAuth';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
-import axios from 'axios';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../hook/useAxiosSecure';
 // import { Helmet } from 'react-helmet-async';
 
 const AddVolunteer = () => {
     // <Helmet>
     //     <title>Home|AddVolunteer</title>
     // </Helmet>
+    const axios = useAxiosSecure();
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
     console.log(startDate);
@@ -32,7 +33,8 @@ const AddVolunteer = () => {
             category,location,volunteer,deadline,
             organizer_name,organizer_email
         }
-        axios.post(`${import.meta.env.VITE_API_URL}/volunteers`, volunteerData)
+    
+        axios.post(`/volunteers`, volunteerData)   
         .then(res =>{
             console.log(res.data);
             if(res.data.insertedId){

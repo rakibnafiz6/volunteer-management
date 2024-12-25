@@ -3,10 +3,11 @@ import DatePicker from 'react-datepicker';
 import useAuth from '../hook/useAuth';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+import useAxiosSecure from '../hook/useAxiosSecure';
 
 const Update = () => {
     const { user } = useAuth();
+    const axios = useAxiosSecure();
     const [startDate, setStartDate] = useState(new Date());
     const volunteerData = useLoaderData();
     const { _id, thumbnail, title, description, category, location, volunteer, deadline } = volunteerData;
@@ -26,7 +27,8 @@ const Update = () => {
             thumbnail, title, description,
             category, location, volunteer, deadline,
         }
-        axios.put(`${import.meta.env.VITE_API_URL}/updatePost/${_id}`, updateData)
+
+            axios.put(`/updatePost/${_id}`, updateData)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount) {

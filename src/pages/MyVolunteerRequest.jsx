@@ -1,14 +1,16 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../hook/useAuth';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../hook/useAxiosSecure';
 
 const MyVolunteerRequest = () => {
     const { user } = useAuth();
     const [myRequest, setMyRequest] = useState([]);
+    const axios = useAxiosSecure();
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/my-request/${user?.email}`)
+
+            axios.get(`/my-request/${user?.email}`)
             .then(res => {
                 setMyRequest(res.data);
             })

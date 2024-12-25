@@ -1,10 +1,10 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaCalendarAlt, FaFacebook, FaInstagramSquare, FaLinkedinIn, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { MdCategory, MdEmail } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import BeAVolunteer from '../components/Modal/BeAVolunteer';
+import useAxiosSecure from '../hook/useAxiosSecure';
 
 const VolunteerDetails = () => {
     const [volunteers, setVolunteers] = useState([]);
@@ -13,9 +13,10 @@ const VolunteerDetails = () => {
         volunteer, organizer_email } = volunteers;
 
     const { id } = useParams();
+    const axios = useAxiosSecure();
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/volunteer-details/${id}`)
+            axios.get(`/volunteer-details/${id}`)
             .then(res => {
                 setVolunteers(res.data);
             })
@@ -37,7 +38,7 @@ const VolunteerDetails = () => {
                         {/* {description} */}
                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.
                     </p>
-                    {/* <button className="btn text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]">Be a Volunteer</button> */}
+            
                     <BeAVolunteer id={id}></BeAVolunteer>
                 </div>
             </div>

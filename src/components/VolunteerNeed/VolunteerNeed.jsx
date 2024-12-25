@@ -14,8 +14,8 @@ const VolunteerNeed = () => {
 
     return (
         <div>
-            <h2 className='text-2xl font-bold text-center'>Volunteer Need Now Section</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
+            <h2 className='text-2xl font-bold text-center pb-3'>Volunteer Need Now Section</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
                 volunteerNow.map(volunteer=><div key={volunteer._id} className="card bg-base-100 shadow-xl">
                     <figure className=''>

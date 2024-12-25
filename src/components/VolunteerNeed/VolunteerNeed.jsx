@@ -38,7 +38,7 @@ const VolunteerNeed = () => {
             }
         </div>
        <div className='flex justify-center mt-10'>
-       <Link to='/allVolunteer'><button className='btn bg-neutral text-white w-[450px]'>See All</button></Link>
+       <Link to='/allVolunteer'><button className='btn bg-neutral text-white w-72 md:w-[450px]'>See All</button></Link>
        </div>
         </div>
     );

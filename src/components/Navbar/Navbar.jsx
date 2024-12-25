@@ -7,11 +7,11 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const links = <>
-        <NavLink to='/' className='mr-2 btn btn-sm'><li>Home</li></NavLink>
-        <NavLink to='/allVolunteer' className='mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
+        <NavLink to='/' className='mb-1 lg:mr-2 btn btn-sm'><li>Home</li></NavLink>
+        <NavLink to='/allVolunteer' className='mb-1 lg:mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
 
         <details className="dropdown">
-            <summary className=" btn btn-sm">My Profile</summary>
+            <summary className="lg:mb-1 btn btn-sm">My Profile</summary>
             <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                 <NavLink to='/addVolunteer' className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
                 <NavLink to='/myVolunteer' className='btn btn-sm'><li>Manage My Posts</li></NavLink>

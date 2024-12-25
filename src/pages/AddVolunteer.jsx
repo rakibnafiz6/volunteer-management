@@ -4,8 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+// import { Helmet } from 'react-helmet-async';
 
 const AddVolunteer = () => {
+    // <Helmet>
+    //     <title>Home|AddVolunteer</title>
+    // </Helmet>
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
     console.log(startDate);
@@ -20,13 +24,13 @@ const AddVolunteer = () => {
         const location = form.location.value;
         const volunteer = form.volunteer.value;
         const deadline = form.deadline.value;
-        const name = form.name.value;
-        const email = form.email.value;
+        const organizer_name = form.name.value;
+        const organizer_email = form.email.value;
 
         const volunteerData ={
             thumbnail,title,description,
             category,location,volunteer,deadline,
-            name,email
+            organizer_name,organizer_email
         }
         axios.post(`${import.meta.env.VITE_API_URL}/volunteers`, volunteerData)
         .then(res =>{
@@ -115,16 +119,16 @@ const AddVolunteer = () => {
                 {/* User Email */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">User Email</span>
+                        <span className="label-text">Organizer Email</span>
                     </label>
-                    <input readOnly type="email" defaultValue={user?.email} name='email' placeholder="user-email" className="input input-bordered w-[450px]" required />
+                    <input readOnly type="email" defaultValue={user?.email} name='email' placeholder="Organizer-email" className="input input-bordered w-[450px]" required />
                 </div>
                 {/* User Name */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">User Name</span>
+                        <span className="label-text">Organizer Name</span>
                     </label>
-                    <input readOnly type="text" defaultValue={user?.displayName} name='name' placeholder="user-name" className="input input-bordered w-[450px]" required />
+                    <input readOnly type="text" defaultValue={user?.displayName} name='name' placeholder="Organizer-name" className="input input-bordered w-[450px]" required />
                 </div>
 
                 {/* add post btn */}

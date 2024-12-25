@@ -6,12 +6,12 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Update = () => {
-    const {user} = useAuth();
+    const { user } = useAuth();
     const [startDate, setStartDate] = useState(new Date());
     const volunteerData = useLoaderData();
-    const {_id,thumbnail, title, description, category, location, volunteer, deadline}= volunteerData;
+    const { _id, thumbnail, title, description, category, location, volunteer, deadline } = volunteerData;
 
-    const handleUpdateVolunteer = (e)=>{
+    const handleUpdateVolunteer = (e) => {
         e.preventDefault();
         const form = e.target;
         const thumbnail = form.thumbnail.value;
@@ -22,22 +22,22 @@ const Update = () => {
         const volunteer = form.volunteer.value;
         const deadline = form.deadline.value;
 
-        const updateData ={
-            thumbnail,title,description,
-            category,location,volunteer,deadline,
+        const updateData = {
+            thumbnail, title, description,
+            category, location, volunteer, deadline,
         }
         axios.put(`${import.meta.env.VITE_API_URL}/updatePost/${_id}`, updateData)
-        .then(res =>{
-            console.log(res.data);
-            if(res.data.modifiedCount){
-                Swal.fire({
-                    title: 'Success!',
-                    text: "Successfully update volunteer data",
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                  })
-            }
-        })
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: "Successfully update volunteer data",
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
     }
 
 
@@ -104,8 +104,8 @@ const Update = () => {
                         <DatePicker className='input input-bordered w-[225px]' required
                             selected={startDate} name='deadline'
                             onChange={(date) => setStartDate(date)}
-                            // value={deadline}
-                        
+                        // value={deadline}
+
                         >
                         </DatePicker>
                     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import useAuth from '../hook/useAuth';
 import Swal from 'sweetalert2';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Login = () => {
     const {signInUser, signInGoogle} = useAuth();
@@ -9,6 +10,10 @@ const Login = () => {
     const location = useLocation();
     // console.log('login',location);
     const from = location.state || '/';
+
+    useEffect(()=>{
+        document.title="Login-page"
+    })
 
     const handleSignIn = (e)=>{
         e.preventDefault();

@@ -16,6 +16,7 @@ const VolunteerDetails = () => {
     const axios = useAxiosSecure();
 
     useEffect(() => {
+        document.title="Volunteer-details"
             axios.get(`/volunteer-details/${id}`)
             .then(res => {
                 setVolunteers(res.data);

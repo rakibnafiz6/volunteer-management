@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useAuth from '../hook/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -6,6 +6,10 @@ import Swal from 'sweetalert2';
 const Register = () => {
     const {createUser, updateUserProfile} = useAuth();
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        document.title="Register-page"
+    })
 
     const handleRegister = (e)=>{
         e.preventDefault();

@@ -9,7 +9,7 @@ const MyVolunteerRequest = () => {
     const axios = useAxiosSecure();
 
     useEffect(() => {
-
+        document.title="My-request"
             axios.get(`/my-request/${user?.email}`)
             .then(res => {
                 setMyRequest(res.data);

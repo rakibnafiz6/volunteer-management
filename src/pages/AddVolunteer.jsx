@@ -4,16 +4,17 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hook/useAxiosSecure';
-// import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+
 
 const AddVolunteer = () => {
-    // <Helmet>
-    //     <title>Home|AddVolunteer</title>
-    // </Helmet>
+    
     const axios = useAxiosSecure();
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
-    // console.log(startDate);
+    useEffect(()=>{
+        document.title="Add-volunteer"
+    })
 
     const handleAddVolunteer = (e)=>{
         e.preventDefault();

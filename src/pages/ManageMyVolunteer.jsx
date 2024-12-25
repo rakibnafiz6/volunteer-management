@@ -15,7 +15,7 @@ const ManageMyVolunteer = () => {
     const [layout, setLayout] = useState('card');
     
     useEffect(() => {
-
+        document.title="Manage-my-posts"
             axios.get(`/manage-my-post/${user?.email}`)
             .then(res => {
                 setMyPost(res.data);

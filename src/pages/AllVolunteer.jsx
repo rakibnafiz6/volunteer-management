@@ -7,6 +7,7 @@ const AllVolunteer = () => {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
+        document.title="All-volunteer"
         // axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
         axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
             .then(res => {

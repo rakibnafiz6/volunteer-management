@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../components/Banner/Banner';
 import VolunteerNeed from '../components/VolunteerNeed/VolunteerNeed';
 
 const Home = () => {
+    useEffect(()=>{
+        document.title="Home"
+    })
     return (
         <div>
         <Banner></Banner>

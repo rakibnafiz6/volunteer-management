@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import useAuth from '../hook/useAuth';
 import { useLoaderData } from 'react-router-dom';
@@ -11,6 +11,10 @@ const Update = () => {
     const [startDate, setStartDate] = useState(new Date());
     const volunteerData = useLoaderData();
     const { _id, thumbnail, title, description, category, location, volunteer, deadline } = volunteerData;
+
+    useEffect(()=>{
+        document.title="Update-volunteer"
+    })
 
     const handleUpdateVolunteer = (e) => {
         e.preventDefault();

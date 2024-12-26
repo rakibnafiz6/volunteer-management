@@ -24,10 +24,10 @@ const VolunteerDetails = () => {
     }, [id])
 
     return (
-        <div className='flex mt-20'>
+        <div className='flex flex-col md:flex-row mt-20'>
             {/* title */}
             <div className='flex-1'>
-                <div className='flex gap-2 items-center'>
+                <div className='flex flex-wrap gap-2 items-center'>
                     <MdCategory /><p>{category}</p>
                     <FaMapMarkerAlt /><p>{location}</p>
                     <FaCalendarAlt /><p>{deadline}</p>

@@ -4,16 +4,16 @@ const Footer = () => {
     return (
         <footer>
             <div className=''>
-                <div className="flex">
-                    <h2 className='text-4xl font-bold bg-gray-300 ml-5 pt-16 p-8'>Volunteer <br /> Management</h2>
-                    <form className="flex gap-6 bg-blue-400 pr-16">
+                <div className="flex flex-col lg:flex-row">
+                    <h2 className='text-4xl font-bold bg-gray-300 lg:ml-5 pt-16 p-8'>Volunteer <br /> Management</h2>
+                    <form className="flex flex-col lg:flex-row gap-6 bg-blue-400 pr-16">
                         <div className='flex flex-col p-8 mt-6'>
                         <label className='text-white mb-2'>Enter your email address:</label>
                         <input type="email" placeholder="Your email"
                         className='input input-bordered'
                           />
                         </div>
-                        <div className="flex flex-col bg-blue-400">
+                        <div className="flex flex-col bg-blue-400 pl-4 lg:pl-0">
                             <h3 className='text-white text-2xl font-bold mt-3 mb-3'>What are your interests?</h3>
                            <div className='flex flex-col pb-4 space-y-3 font-black'>
                            <label><input type="checkbox" /> Volunteer Opportunities</label>
@@ -22,12 +22,12 @@ const Footer = () => {
                             <label><input type="checkbox" /> Partner Updates</label>
                            </div>
                         </div>
-                        <button className='btn mt-20 text-blue-400'>Sign Up</button>
+                        <button className='btn mt-20 text-blue-400 ml-3 lg:ml-0'>Sign Up</button>
                     </form>
                 </div>
             </div>
-            <div className="bg-gray-700 text-white w-[1040px] ml-5">
-                <div className="flex justify-between mx-5 pt-4">
+            <div className="bg-gray-700 text-white lg:w-[1040px] lg:ml-5">
+                <div className="flex flex-col md:flex-row justify-between mx-5 pt-4">
                     <a href="#about">About Us</a>
                     <a href="#work">Volunteer Stories</a>
                     <a href="#resources">Volunteer Resources</a>

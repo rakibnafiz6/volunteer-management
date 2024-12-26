@@ -61,11 +61,11 @@ const ManageMyVolunteer = () => {
             {myPost.length === 0 ? <p className='text-center text-2xl font-semibold'>You haven't added any volunteer need posts yet. Start by creating a new post!</p> :
               <div>
               {
-                layout === 'table'?  <div className="overflow-x-auto">
+                layout === 'table'?  <div className="overflow-x-hidden">
                 <table className="table">
                     {/* head */}
-                    <thead>
-                        <tr>
+                    <thead className=''>
+                        <tr className=''>
                             <th></th>
                             <th>Title</th>
                             <th>Location</th>
@@ -73,7 +73,7 @@ const ManageMyVolunteer = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=''>
                         {
                             myPost.map((post, idx) => <tr key={post._id} className='hover'>
                                 <th>{idx + 1}</th>
@@ -81,7 +81,7 @@ const ManageMyVolunteer = () => {
                                 <td>{post.location}</td>
                                 <td>{post.category}</td>
                                 <td>
-                                    <Link to={`/update/${post._id}`}><button className='btn mr-2'>Update</button></Link>
+                                    <Link to={`/update/${post._id}`}><button className='btn md:mr-2'>Update</button></Link>
                                     <button onClick={() => handleDelete(post._id)} className='btn'>Delete</button>
                                 </td>
                             </tr>)

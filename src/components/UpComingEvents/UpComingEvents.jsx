@@ -5,7 +5,7 @@ const UpComingEvents = () => {
         <div>
             <section className="upcoming-events">
                 <h2 className='text-2xl font-bold text-center'>Upcoming Events</h2>
-                <ul className='flex mt-4 gap-5'>
+                <ul className='flex flex-col lg:flex-row mt-4 gap-5'>
                     <li className='bg-yellow-500 p-5 rounded-md'>
                         <h3 className='text-xl font-bold'>Tree Plantation Drive</h3>
                         <p><span className=' font-medium'>Date: </span> January 15, 2024</p>

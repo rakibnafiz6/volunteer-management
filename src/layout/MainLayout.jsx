@@ -9,7 +9,7 @@ const MainLayout = () => {
             <nav className='md:w-11/12 mx-auto py-5'>
             <Navbar></Navbar>
             </nav>
-            <section className='md:w-11/12 mx-auto px-4'>
+            <section className='md:w-11/12 mx-auto'>
             <Outlet></Outlet>
             </section>
             <footer className='mt-24 w-11/12 mx-auto'>

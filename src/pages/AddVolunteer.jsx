@@ -5,10 +5,11 @@ import DatePicker from 'react-datepicker';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hook/useAxiosSecure';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddVolunteer = () => {
-    
+    const navigate = useNavigate();
     const axios = useAxiosSecure();
     const {user} = useAuth();
     const [startDate, setStartDate] = useState(new Date());
@@ -45,6 +46,8 @@ const AddVolunteer = () => {
                     icon: 'success',
                     confirmButtonText: 'OK'
                   })
+                  form.reset();
+                  navigate('/myVolunteer')
             }
         })
     }
@@ -75,7 +78,9 @@ const AddVolunteer = () => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text" name='description' placeholder="description " className="input input-bordered lg:w-[450px]" required />
+                    <textarea name='description' placeholder='description'
+                     className='input input-bordered lg:w-[450px]' required
+                    ></textarea>
                 </div>
                <div className='flex flex-col lg:flex-row gap-2'>
                  {/* Category  */}

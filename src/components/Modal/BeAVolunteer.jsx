@@ -3,9 +3,11 @@ import DatePicker from 'react-datepicker';
 import useAuth from '../../hook/useAuth';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const BeAVolunteer = ({ id }) => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const [startDate, setStartDate] = useState(new Date());
     const [volunteerData, setVolunteerData] = useState({});
     const { _id, thumbnail, title, description, category, location, deadline,
@@ -53,6 +55,7 @@ const BeAVolunteer = ({ id }) => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    navigate('/myVolunteer');
                 }
             })
     }

@@ -28,24 +28,24 @@ const Footer = () => {
             </div>
             <div className="bg-gray-700 text-white lg:w-[1040px] lg:ml-5">
                 <div className="flex flex-col md:flex-row justify-between mx-5 pt-4">
-                    <a href="#about">About Us</a>
-                    <a href="#work">Volunteer Stories</a>
-                    <a href="#resources">Volunteer Resources</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact Us</a>
-                    <a href="#faq">FAQs</a>
-                    <a href="#guidelines">Volunteer Guidelines</a>
+                    <a>About Us</a>
+                    <a>Volunteer Stories</a>
+                    <a>Volunteer Resources</a>
+                    <a>Blog</a>
+                    <a>Contact Us</a>
+                    <a>FAQs</a>
+                    <a>Volunteer Guidelines</a>
                 </div>
                 <div className="flex justify-center gap-6 mt-4 mb-2">
-                    <a href="#"><img src="https://i.ibb.co.com/wsW4Djn/img-icons8.png" alt="twitter" className='w-10' /></a>
-                    <a href="#"><img src="https://i.ibb.co.com/kD2j5GN/img-icons8.png" alt="facebook" className='w-10' /></a>
-                    <a href="#"><img src="https://i.ibb.co.com/d6mQBv5/img-icons8.png" alt="instagram" className='w-10' /></a>
-                    <a href="#"><img src="https://i.ibb.co.com/NrF3JCx/img-icons8.png" alt="linkedin" className='w-10' /></a>
+                    <a><img src="https://i.ibb.co.com/wsW4Djn/img-icons8.png" alt="twitter" className='w-10' /></a>
+                    <a><img src="https://i.ibb.co.com/kD2j5GN/img-icons8.png" alt="facebook" className='w-10' /></a>
+                    <a><img src="https://i.ibb.co.com/d6mQBv5/img-icons8.png" alt="instagram" className='w-10' /></a>
+                    <a><img src="https://i.ibb.co.com/NrF3JCx/img-icons8.png" alt="linkedin" className='w-10' /></a>
                 </div>
                 <div className="text-center">
-                    <a href="#terms">Terms of Service | </a>
-                    <a href="#privacy">Privacy Policy | </a>
-                    <a href="#sitemap">Sitemap</a>
+                    <a>Terms of Service | </a>
+                    <a>Privacy Policy | </a>
+                    <a >Sitemap</a>
                 </div>
             </div>
         </footer>

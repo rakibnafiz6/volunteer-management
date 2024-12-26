@@ -38,13 +38,13 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-black">
             <div className="navbar-start">
                 <div className="dropdown mr-3">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="h-5 w-5 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -61,7 +61,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl w-10 md:w-72">Volunteer Management</Link>
+                <Link to='/' className="btn btn-ghost text-cyan-400 text-xl w-10 md:w-72">Volunteer Management</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 flex items-center">
@@ -71,8 +71,8 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user ? <> <div className='tooltip flex' data-tip={user?.displayName}>
                     <img className='tooltip w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
-                    </div> <button onClick={handleLogOut} className='btn mr-2'>Logout</button></>: 
-                    <Link to='/login' className="btn mr-2">Login</Link>}
+                    </div> <button onClick={handleLogOut} className='btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]'>Logout</button></>: 
+                    <Link to='/login' className="btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]">Login</Link>}
                     <Theme></Theme>
 
             </div>

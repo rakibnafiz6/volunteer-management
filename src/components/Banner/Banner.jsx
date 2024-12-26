@@ -1,4 +1,4 @@
-import React from 'react';
+import 'animate.css';
 
 const Banner = () => {
     return (
@@ -13,7 +13,7 @@ const Banner = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Join Hands, Make a Difference</h1>
+                                <h1 className="animate__animated animate__swing mb-5 text-5xl font-bold">Join Hands, Make a Difference</h1>
                                 <p className="mb-5">
                                 Empowering communities through the spirit of volunteerism. Whether it's lending a hand, sharing your skills, or supporting a noble cause, every effort counts. Together, let's create meaningful change and build a brighter future.
                                 </p>
@@ -30,7 +30,7 @@ const Banner = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Empowering Lives</h1>
+                                <h1 className="animate__animated animate__wobble mb-5 text-5xl font-bold">Empowering Lives</h1>
                                 <p className="mb-5">
                                 Discover the power of collaboration and community service. Volunteers join forces to organize and deliver essential resources, bringing hope and support to those in need. Together, we can inspire change and uplift communities for a better tomorrow.
                                 </p>
@@ -47,7 +47,7 @@ const Banner = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Planting Hope for a Greener Future</h1>
+                                <h1 className="animate__animated animate__tada mb-5 text-5xl font-bold">Planting Hope for a Greener Future</h1>
                                 <p className="mb-5">
                                 Join our volunteer community in creating a sustainable tomorrow. Through tree planting and environmental conservation, we nurture the earth and foster greener spaces for generations to come. Be part of the change—every tree planted today shapes a healthier planet for the future.
                                 </p>

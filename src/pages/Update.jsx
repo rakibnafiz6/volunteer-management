@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import useAuth from '../hook/useAuth';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hook/useAxiosSecure';
 
 const Update = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const axios = useAxiosSecure();
     const [startDate, setStartDate] = useState(new Date());
     const volunteerData = useLoaderData();
@@ -42,6 +43,7 @@ const Update = () => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    navigate('/myVolunteer');
                 }
             })
     }
@@ -70,7 +72,10 @@ const Update = () => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text" defaultValue={description} name='description' placeholder="description" className="input input-bordered md:w-[450px]" required />
+                    <textarea name='description' placeholder='description'
+                    defaultValue={description}
+                     className='input input-bordered md:w-[450px]' required
+                    ></textarea>
                 </div>
                 <div className='flex flex-col md:flex-row gap-2'>
                     {/* Category  */}
@@ -110,7 +115,6 @@ const Update = () => {
                         <DatePicker className='input input-bordered w-full md:w-[225px]' required
                             selected={startDate} name='deadline'
                             onChange={(date) => setStartDate(date)}
-                        // value={deadline}
 
                         >
                         </DatePicker>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import 'animate.css';
 const VolunteerNeed = () => {
     const [volunteerNow, setVolunteerNow] = useState([]);
 
@@ -14,18 +14,18 @@ const VolunteerNeed = () => {
 
     return (
         <div>
-            <h2 className='text-2xl font-bold text-center pb-3'>Volunteer Need Now Section</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <h2 className='text-2xl font-bold text-center'>Volunteer Need Now Section</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5'>
             {
-                volunteerNow.map(volunteer=><div key={volunteer._id} className="card bg-base-100 shadow-xl">
-                    <figure className=''>
+                volunteerNow.map(volunteer=><div key={volunteer._id} className="card w-56 bg-lime-200 border-2 border-teal-400 animate__animated animate__bounceIn">
+                    <figure className='p-3'>
                         <img
-                            className='w-80 h-60'
+                            className='rounded-lg h-40'
                             src={volunteer.thumbnail}
                             alt="volunteer" />
                     </figure>
                     <p className='ml-5 text-[#091854]'>Deadline: <span className='text-red-500'>{volunteer.deadline}</span></p>
-                    <div className="pl-5 mt-4 space-y-2">
+                    <div className="pl-5 mt-4">
                         <h2 className="card-title text-[#091854]">{volunteer.title}</h2>
                         <p className='text-gray-400'>Category: {volunteer.category}</p>
                         <div className="card-actions pb-5">

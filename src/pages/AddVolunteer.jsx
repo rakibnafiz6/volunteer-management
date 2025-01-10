@@ -58,7 +58,7 @@ const AddVolunteer = () => {
     return (
         <div>
             <h2 className='text-center text-2xl font-bold mb-4'>Add Volunteer</h2>
-            <form onSubmit={handleAddVolunteer} className="card-body lg:w-6/12 mx-auto bg-slate-300">
+            <form onSubmit={handleAddVolunteer} className="card-body lg:w-6/12 mx-auto bg-cyan-400 rounded-sm">
                 {/* Thumbnail */}
                 <div className="form-control">
                     <label className="label">
@@ -141,7 +141,7 @@ const AddVolunteer = () => {
 
                 {/* add post btn */}
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary lg:w-[450px]">Add Post</button>
+                    <button className="btn bg-gradient-to-r from-[#2d49bd] to-[#de2045] text-white lg:w-[450px]">Add Post</button>
                 </div>
             </form>
         </div>

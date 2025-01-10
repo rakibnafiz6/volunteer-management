@@ -49,12 +49,12 @@ const MyVolunteerRequest = () => {
 
     return (
         <div>
-            <h2 className='text-2xl font-bold text-center mb-6'>My Volunteer Request Post</h2>
+            <h2 className='text-2xl font-bold text-center mb-7'>My Volunteer Request Post</h2>
             {myRequest.length === 0 ? <p className='text-center text-2xl font-semibold'>You have not made any volunteer requests yet.</p> :
                 <div className="overflow-x-hidden">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className='bg-slate-900 text-white'>
                             <tr>
                                 <th></th>
                                 <th>Title</th>
@@ -63,9 +63,9 @@ const MyVolunteerRequest = () => {
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className='bg-slate-300'>
                             {
-                                myRequest.map((request, idx) => <tr key={idx} className='hover'>
+                                myRequest.map((request, idx) => <tr key={idx} className='hover:bg-stone-900 hover:text-white'>
                                     <th>{idx + 1}</th>
                                     <td>{request.title}</td>
                                     <td>{request.category}</td>
@@ -73,7 +73,7 @@ const MyVolunteerRequest = () => {
                                         <div className="badge badge-secondary badge-outline">{request.status}</div>
                                     </td>
                                     <td>
-                                        <button onClick={() => handleStatus(request._id)} className='btn'>Cancel</button>
+                                        <button onClick={() => handleStatus(request._id)} className='btn text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]'>Cancel</button>
                                     </td>
                                 </tr>)
                             }

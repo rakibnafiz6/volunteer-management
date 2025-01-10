@@ -26,7 +26,7 @@ const VolunteerDetails = () => {
     return (
         <div className='flex flex-col md:flex-row mt-20'>
             {/* title */}
-            <div className='flex-1'>
+            <div className='flex-1 bg-teal-600 p-7 rounded-sm'>
                 <div className='flex flex-wrap gap-2 items-center'>
                     <MdCategory /><p>{category}</p>
                     <FaMapMarkerAlt /><p>{location}</p>
@@ -35,16 +35,15 @@ const VolunteerDetails = () => {
                 </div>
                 <div>
                     <h1 className="text-5xl font-bold mt-4">{title}</h1>
-                    <p className="py-6 text-gray-500">
+                    <p className="py-6">
                         {description}
-                        {/* There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful. */}
                     </p>
             
                     <BeAVolunteer id={id}></BeAVolunteer>
                 </div>
             </div>
             {/* image */}
-            <div className='w-72 h-[400px] bg-[#f9f4f4] grid justify-center p-10'>
+            <div className='w-96 h-[400px] bg-sky-500 grid justify-center p-10 rounded-sm'>
                 <div className="avatar">
                     <div className="rounded-full w-48 h-48">
                         <img src={thumbnail} className='' />

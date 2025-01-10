@@ -67,7 +67,7 @@ const BeAVolunteer = ({ id }) => {
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     {/* <h3 className="font-bold text-lg">Hello!</h3> */}
-                    <form onSubmit={handleBeAVolunteer} className="card-body bg-slate-300">
+                    <form onSubmit={handleBeAVolunteer} className="card-body bg-cyan-400">
                         {/* Thumbnail */}
                         <div className="form-control">
                             <label className="label">
@@ -193,13 +193,13 @@ const BeAVolunteer = ({ id }) => {
 
                         {/* add post btn */}
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Request</button>
+                            <button className="btn bg-gradient-to-r from-[#2d49bd] to-[#de2045] text-white">Request</button>
                         </div>
                     </form>
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn">Close</button>
+                            <button className="btn text-white bg-gradient-to-r from-[#de2045] to-[#2d49bd]">Close</button>
                         </form>
                     </div>
                 </div>

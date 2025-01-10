@@ -5,15 +5,21 @@ import { Link } from 'react-router-dom';
 const AllVolunteer = () => {
     const [volunteers, setVolunteers] = useState([]);
     const [search, setSearch] = useState('');
+    const [sort, setSort] = useState('');
+    console.log(sort);
 
     useEffect(() => {
         document.title="All-volunteer"
-        // axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
-        axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/volunteers?search=${search}&sort=${sort}`)
             .then(res => {
                 setVolunteers(res.data);
             })
-    }, [search])
+    }, [search,sort])
+
+    // const handleSort = (deadline)=>{
+    //     console.log(deadline);
+    //     setSort(deadline);
+    // }
 
     return (
         <div className=''>
@@ -33,7 +39,9 @@ const AllVolunteer = () => {
                             clipRule="evenodd" />
                     </svg>
                 </label>
+                <button onClick={()=>setSort('deadline')} className='btn bg-gradient-to-r from-[#2d49bd] to-[#de2045] text-white ml-2'>Sort by: Deadline</button>
             </form>
+            
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 p-4 rounded-md'>
                 {
                     volunteers.map(volunteer =><div key={volunteer._id}

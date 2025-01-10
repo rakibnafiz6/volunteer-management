@@ -6,7 +6,7 @@ import Testimonial from '../components/Testimonial/Testimonial';
 
 const Home = () => {
     useEffect(()=>{
-        document.title="Home"
+        document.title="Volunteer Management|Home"
     })
     return (
         <div>

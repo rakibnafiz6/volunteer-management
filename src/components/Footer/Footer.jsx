@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className=''>
             <div className=''>
                 <div className="flex flex-col lg:flex-row">
-                    <h2 className='text-4xl font-bold bg-gray-300 lg:ml-5 pt-16 p-8'>Volunteer <br /> Management</h2>
-                    <form className="flex flex-col lg:flex-row gap-6 bg-blue-400 pr-16">
+                    <h2 className='text-4xl font-bold bg-gray-300 pt-16 p-8'>Volunteer <br /> Management</h2>
+                    <form className="flex flex-col lg:flex-row gap-6 bg-blue-400 pr-16 w-[1260px]">
                         <div className='flex flex-col p-8 mt-6'>
                         <label className='text-white mb-2'>Enter your email address:</label>
                         <input type="email" placeholder="Your email"
@@ -22,25 +23,20 @@ const Footer = () => {
                             <label><input type="checkbox" /> Partner Updates</label>
                            </div>
                         </div>
-                        <button className='btn mt-20 text-blue-400 ml-3 lg:ml-0'>Sign Up</button>
+                       <div className='mt-11 ml-4'>
+                       <img src="https://i.ibb.co.com/djFmSDQ/455177887-n.jpg"
+                        className='w-32 h-32 rounded-full'
+                        alt="" />
+                       </div>
                     </form>
                 </div>
             </div>
-            <div className="bg-gray-700 text-white lg:w-[1040px] lg:ml-5">
-                <div className="flex flex-col md:flex-row justify-between mx-5 pt-4">
-                    <a>About Us</a>
-                    <a>Volunteer Stories</a>
-                    <a>Volunteer Resources</a>
-                    <a>Blog</a>
-                    <a>Contact Us</a>
-                    <a>FAQs</a>
-                    <a>Volunteer Guidelines</a>
-                </div>
-                <div className="flex justify-center gap-6 mt-4 mb-2">
-                    <a><img src="https://i.ibb.co.com/wsW4Djn/img-icons8.png" alt="twitter" className='w-10' /></a>
-                    <a><img src="https://i.ibb.co.com/kD2j5GN/img-icons8.png" alt="facebook" className='w-10' /></a>
-                    <a><img src="https://i.ibb.co.com/d6mQBv5/img-icons8.png" alt="instagram" className='w-10' /></a>
-                    <a><img src="https://i.ibb.co.com/NrF3JCx/img-icons8.png" alt="linkedin" className='w-10' /></a>
+            <div className="bg-gray-700 text-white">
+                <div className="flex justify-center gap-6 mb-2 pt-2">
+                    
+                    <Link to='https://www.facebook.com/nafiz.al.rakib/'><img src="https://i.ibb.co.com/kD2j5GN/img-icons8.png" alt="facebook" className='w-10' /></Link>
+                    <Link to='https://www.linkedin.com/in/nafiz-al-rakib/'><img src="https://i.ibb.co.com/NrF3JCx/img-icons8.png" alt="linkedin" className='w-10' /></Link>
+                    <Link to='https://github.com/rakibnafiz6'><img src="https://i.ibb.co.com/JF7qHps/img-icons8.png" alt="github" className='w-10' /></Link>
                 </div>
                 <div className="text-center">
                     <a>Terms of Service | </a>

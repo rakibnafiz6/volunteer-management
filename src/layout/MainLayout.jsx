@@ -5,14 +5,14 @@ import Footer from '../components/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
-            <nav className='md:w-11/12 mx-auto py-5'>
+        <div className=''>
+            <nav className='py-5 sticky top-0 z-50 backdrop-blur-xl'>
             <Navbar></Navbar>
             </nav>
             <section className='md:w-11/12 mx-auto'>
             <Outlet></Outlet>
             </section>
-            <footer className='mt-24 w-11/12 mx-auto'>
+            <footer className='mt-24'>
                 <Footer></Footer>
             </footer>
         </div>

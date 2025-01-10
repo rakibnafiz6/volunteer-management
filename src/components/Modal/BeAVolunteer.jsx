@@ -12,7 +12,7 @@ const BeAVolunteer = ({ id }) => {
     const [volunteerData, setVolunteerData] = useState({});
     const { _id, thumbnail, title, description, category, location, deadline,
         volunteer, organizer_email, organizer_name } = volunteerData;
-//  console.log(_id);
+ 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/volunteer/${id}`)
             .then(res => {

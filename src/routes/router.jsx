@@ -37,13 +37,14 @@ import Update from "../pages/Update";
         },
         {
           path: '/allVolunteer',
-          element: <AllVolunteer></AllVolunteer>
+          element: <PrivateRoutes>
+            <AllVolunteer></AllVolunteer>
+          </PrivateRoutes>
         },
         {
           path: '/volunteerDetails/:id',
-          element: <PrivateRoutes>
+          element: 
             <VolunteerDetails></VolunteerDetails>
-          </PrivateRoutes>
         },
         {
           path: '/update/:id',

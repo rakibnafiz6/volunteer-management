@@ -9,16 +9,13 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const links = <>
-        <NavLink to='/' className='mb-1 lg:mr-2 btn btn-sm'><li>Home</li></NavLink>
-        <NavLink to='/allVolunteer' className='mb-1 lg:mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
-
-        <details className="dropdown">
-            <summary className="lg:mb-1 btn btn-sm">My Profile</summary>
-            <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                <NavLink to='/addVolunteer' className='btn btn-sm mb-2'><li>Add Volunteer need Post</li></NavLink>
-                <NavLink to='/myVolunteer' className='btn btn-sm'><li>Manage My Posts</li></NavLink>
-            </ul>
-        </details>
+    <NavLink to='/' className='mb-1 lg:mr-2 btn btn-sm'><li>Home</li></NavLink>
+    <NavLink to='/about' className='mb-1 lg:mr-2 btn btn-sm'><li>About Us</li></NavLink>
+    {user && <><NavLink to='/allVolunteer' className='mb-1 lg:mr-2 btn btn-sm'><li>All volunteer posts</li></NavLink>
+        <NavLink to='/addVolunteer' className='mb-1 lg:mr-2 btn btn-sm'><li>Add Volunteer need Post</li></NavLink>
+        <NavLink to='/myVolunteer' className='mb-1 btn btn-sm'><li>Manage My Posts</li></NavLink></>}
+        
+        
     </>
 
     const handleLogOut = () => {
@@ -38,7 +35,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-black">
+        <div className="navbar bg-black backdrop-blur-xl">
             <div className="navbar-start">
                 <div className="dropdown mr-3">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,11 +65,13 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end pr-6">
                 {user ? <> <div className='tooltip flex' data-tip={user?.displayName}>
                     <img className='tooltip w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
                     </div> <button onClick={handleLogOut} className='btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]'>Logout</button></>: 
-                    <Link to='/login' className="btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]">Login</Link>}
+                   <> <Link to='/login' className="btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]">Login</Link>
+                   <Link to='/register' className="btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]">Register</Link>
+                   </>}
                     <Theme></Theme>
 
             </div>

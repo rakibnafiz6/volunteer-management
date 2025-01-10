@@ -2,10 +2,10 @@ import React from 'react';
 
 const Testimonial = () => {
     return (
-        <div>
+        <div className=''>
             <section className="testimonials">
-                <h2 className='text-center text-2xl font-bold mb-4'>What Our Volunteers Say</h2>
-                <div className="testimonials-container">
+                <h2 className='text-center text-2xl font-bold mb-7'>What Our Volunteers Say</h2>
+                <div className="testimonials-container bg-gradient-to-r from-[#2d49bd] to-[#de2045] text-white p-10 rounded-sm">
                     <div className="testimonial mb-3">
                         <p className='text-base font-light'>"Volunteering at the tree plantation drive was such a rewarding experience. Seeing the trees grow gives me immense satisfaction."</p>
                         <h4 className='text-xl font-medium'>- John Doe</h4>

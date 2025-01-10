@@ -25,11 +25,11 @@ const AddVolunteer = () => {
         const description = form.description.value;
         const category = form.category.value;
         const location = form.location.value;
-        const volunteer = form.volunteer.value;
+        const volunteer = parseInt(form.volunteer.value);
         const deadline = form.deadline.value;
         const organizer_name = form.name.value;
         const organizer_email = form.email.value;
-
+        // console.log(volunteer);
         const volunteerData ={
             thumbnail,title,description,
             category,location,volunteer,deadline,

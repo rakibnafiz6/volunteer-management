@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+a.active{
+    background-color: #2d49bd;
+    color: white;
+}
 
 :root {
     --body-background: white

@@ -5,16 +5,16 @@ const Footer = () => {
     return (
         <footer className=''>
             <div className=''>
-                <div className="flex flex-col lg:flex-row">
-                    <h2 className='text-4xl font-bold bg-gray-300 pt-16 p-8'>Volunteer <br /> Management</h2>
-                    <form className="flex flex-col lg:flex-row gap-6 bg-blue-400 pr-16 w-[1260px]">
+                <div className="flex flex-col md:flex-row">
+                    <h2 className='text-4xl md:text-2xl lg:text-4xl font-bold bg-gray-300 pt-16 p-8 md:p-0 md:pt-5 lg:pl-8 lg:pr-4'>Volunteer <br /> Management</h2>
+                    <form className="flex flex-col md:flex-row gap-6 bg-blue-400 lg:pr-16 lg:w-[1260px]">
                         <div className='flex flex-col p-8 mt-6'>
                         <label className='text-white mb-2'>Enter your email address:</label>
                         <input type="email" placeholder="Your email"
                         className='input input-bordered'
                           />
                         </div>
-                        <div className="flex flex-col bg-blue-400 pl-4 lg:pl-0">
+                        <div className="flex flex-col bg-blue-400">
                             <h3 className='text-white text-2xl font-bold mt-3 mb-3'>What are your interests?</h3>
                            <div className='flex flex-col pb-4 space-y-3 font-black'>
                            <label><input type="checkbox" /> Volunteer Opportunities</label>
@@ -23,7 +23,7 @@ const Footer = () => {
                             <label><input type="checkbox" /> Partner Updates</label>
                            </div>
                         </div>
-                       <div className='mt-11 ml-4'>
+                       <div className='mt-11 lg:ml-4'>
                        <img src="https://i.ibb.co.com/djFmSDQ/455177887-n.jpg"
                         className='w-32 h-32 rounded-full'
                         alt="" />

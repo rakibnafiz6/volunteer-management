@@ -51,7 +51,7 @@ const MyVolunteerRequest = () => {
         <div>
             <h2 className='text-2xl font-bold text-center mb-7'>My Volunteer Request Post</h2>
             {myRequest.length === 0 ? <p className='text-center text-2xl font-semibold'>You have not made any volunteer requests yet.</p> :
-                <div className="overflow-x-hidden">
+                <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead className='bg-slate-900 text-white'>

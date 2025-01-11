@@ -21,7 +21,7 @@ const AllVolunteer = () => {
         <div className=''>
             <div className='flex justify-center'>
             <form className='flex justify-center'>
-                <label className="w-96 input input-bordered flex items-center gap-2">
+                <label className="md:w-96 input input-bordered flex items-center gap-2">
                     <input type="text"
                     onChange={(e)=>setSearch(e.target.value)}
                      className="grow" placeholder="Search by Post Title" />

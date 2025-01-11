@@ -58,14 +58,14 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-cyan-400 text-xl w-10 md:w-72">Volunteer Management</Link>
+                <Link to='/' className="btn btn-ghost text-cyan-400 md:text-xl w-8 md:w-72">Volunteer Management</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 flex items-center">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end pr-6">
+            <div className="navbar-end md:pr-6">
                 {user ? <> <div className='tooltip flex' data-tip={user?.displayName}>
                     <img className='tooltip w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
                     </div> <button onClick={handleLogOut} className='btn mr-2 text-white bg-gradient-to-r from-[#2d49bd] to-[#de2045]'>Logout</button></>: 

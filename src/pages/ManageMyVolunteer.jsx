@@ -61,7 +61,7 @@ const ManageMyVolunteer = () => {
             {myPost.length === 0 ? <p className='text-center text-2xl font-semibold'>You haven't added any volunteer need posts yet. Start by creating a new post!</p> :
               <div>
               {
-                layout === 'table'?  <div className="overflow-x-hidden">
+                layout === 'table'?  <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead className='bg-black text-gray-300'>
@@ -76,13 +76,13 @@ const ManageMyVolunteer = () => {
                     <tbody className='bg-cyan-500'>
                         {
                             myPost.map((post, idx) => <tr key={post._id} className='hover:bg-cyan-900 hover:text-white'>
-                                <th>{idx + 1}</th>
+                                <th className=''>{idx + 1}</th>
                                 <td>{post.title}</td>
                                 <td>{post.location}</td>
                                 <td>{post.category}</td>
-                                <td>
-                                    <Link to={`/update/${post._id}`}><button className='btn md:mr-2 bg-[#2d49bd] text-white'>Update</button></Link>
-                                    <button onClick={() => handleDelete(post._id)} className='btn text-white bg-[#de2045]'>Delete</button>
+                                <td className=''>
+                                    <Link to={`/update/${post._id}`}><button className='btn md:mr-2 bg-[#2d49bd] text-white text-xs md:text-sm'>Update</button></Link>
+                                    <button onClick={() => handleDelete(post._id)} className='btn text-white bg-[#de2045] text-xs md:text-sm'>Delete</button>
                                 </td>
                             </tr>)
                         }

@@ -26,7 +26,7 @@ const VolunteerDetails = () => {
     return (
         <div className='flex flex-col md:flex-row mt-20'>
             {/* title */}
-            <div className='flex-1 bg-teal-600 p-7 rounded-sm'>
+            <div className='flex-1 bg-teal-600 p-7 rounded-sm md:h-[600px] lg:h-[400px]'>
                 <div className='flex flex-wrap gap-2 items-center'>
                     <MdCategory /><p>{category}</p>
                     <FaMapMarkerAlt /><p>{location}</p>
@@ -43,7 +43,7 @@ const VolunteerDetails = () => {
                 </div>
             </div>
             {/* image */}
-            <div className='w-96 h-[400px] bg-sky-500 grid justify-center p-10 rounded-sm'>
+            <div className='w-96 md:h-[600px] lg:h-[400px] bg-sky-500 grid justify-center p-10 rounded-sm'>
                 <div className="avatar">
                     <div className="rounded-full w-48 h-48">
                         <img src={thumbnail} className='' />
